@@ -51,7 +51,7 @@ systemctl start vlmcsd.service
 ## [shadowsocks](https://github.com/shadowsocks/shadowsocks)
 
 1. Install ```python-pip```
-2. ```pip install shadowsocks```
+2. ```pip install git+https://github.com/shadowsocks/shadowsocks.git@master```
 3. Create ```shadowsocks.json``` in ```/etc/```, like this:
 
 ``` JSON
@@ -64,7 +64,7 @@ systemctl start vlmcsd.service
     "*20002*":"*password_for_second_port*"
    },
    "timeout":300,
-   "method":"aes-256-cfb",
+   "method":"chacha20-ietf-poly1305",
    "fast_open":true
 }
 ```
@@ -100,6 +100,21 @@ Modfiy ```*/shadowsocks/crypto/openssl.py``` by vim:
 :x
 ```
 
+6. ```Exception: libsodium not found```
+
+Download [libsodium](https://github.com/jedisct1/libsodium/releases), decompress it, and enter the directory.
+
+``` Bash shell
+./configure
+make && make check
+make install
+ldconfig
+```
+
 https://kionf.com/2016/12/15/errornote-ss/
 
-6. ```rc.local```: [Install And Use Shadowsocks Command Line Client on Linux - LinuxBabe](https://www.linuxbabe.com/desktop-linux/how-to-install-and-use-shadowsocks-command-line-client)
+https://download.libsodium.org/doc/installation
+
+https://github.com/shadowsocksrr/shadowsocks-rss/wiki/libsodium
+
+7. ```rc.local```: [Install And Use Shadowsocks Command Line Client on Linux - LinuxBabe](https://www.linuxbabe.com/desktop-linux/how-to-install-and-use-shadowsocks-command-line-client)
