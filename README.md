@@ -9,7 +9,7 @@ vi /etc/ssh/sshd_config
 ```
 
 ``` vi
-:%s/PermitRootLogin yes/PermitRootLogin no
+:%s/^PermitRootLogin yes/PermitRootLogin no
 :wq
 ```
 
