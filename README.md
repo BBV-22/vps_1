@@ -102,7 +102,7 @@ Modfiy ```*/shadowsocks/crypto/openssl.py``` by vim:
 
 6. ```Exception: libsodium not found```
 
-Download [libsodium](https://github.com/jedisct1/libsodium/releases), decompress it, and enter the directory.
+Download [libsodium](https://download.libsodium.org/libsodium/releases/), decompress it, and enter the directory.
 
 ``` Bash shell
 ./configure
